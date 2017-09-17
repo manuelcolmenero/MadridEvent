@@ -38,6 +38,9 @@
 		261C14CF1F6EFC2B00C6F28E /* MadridEventTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MadridEventTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		261C14D31F6EFC2B00C6F28E /* MadridEventTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MadridEventTests.swift; sourceTree = "<group>"; };
 		261C14D51F6EFC2B00C6F28E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		261C14ED1F6F034D00C6F28E /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		261C14EE1F6F034E00C6F28E /* String+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Image.swift"; sourceTree = "<group>"; };
+		261C14EF1F6F038A00C6F28E /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,12 +83,13 @@
 			isa = PBXGroup;
 			children = (
 				261C14BB1F6EFC2B00C6F28E /* AppDelegate.swift */,
-				261C14BD1F6EFC2B00C6F28E /* ViewController.swift */,
-				261C14BF1F6EFC2B00C6F28E /* Main.storyboard */,
+				261C14EF1F6F038A00C6F28E /* Podfile */,
+				261C14E91F6F029300C6F28E /* Controllers */,
+				261C14EA1F6F02A000C6F28E /* Model */,
+				261C14E71F6F027100C6F28E /* Util */,
+				261C14E81F6F027A00C6F28E /* Views */,
 				261C14C51F6EFC2B00C6F28E /* Assets.xcassets */,
-				261C14C71F6EFC2B00C6F28E /* LaunchScreen.storyboard */,
 				261C14CA1F6EFC2B00C6F28E /* Info.plist */,
-				261C14C21F6EFC2B00C6F28E /* MadridEvent.xcdatamodeld */,
 			);
 			path = MadridEvent;
 			sourceTree = "<group>";
@@ -97,6 +101,56 @@
 				261C14D51F6EFC2B00C6F28E /* Info.plist */,
 			);
 			path = MadridEventTests;
+			sourceTree = "<group>";
+		};
+		261C14E71F6F027100C6F28E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				261C14ED1F6F034D00C6F28E /* CoreDataStack.swift */,
+				261C14EE1F6F034E00C6F28E /* String+Image.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		261C14E81F6F027A00C6F28E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				261C14BF1F6EFC2B00C6F28E /* Main.storyboard */,
+				261C14C71F6EFC2B00C6F28E /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		261C14E91F6F029300C6F28E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				261C14BD1F6EFC2B00C6F28E /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		261C14EA1F6F02A000C6F28E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				261C14EB1F6F02BE00C6F28E /* Interactors */,
+				261C14EC1F6F02CA00C6F28E /* JsonParser */,
+				261C14C21F6EFC2B00C6F28E /* MadridEvent.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		261C14EB1F6F02BE00C6F28E /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		261C14EC1F6F02CA00C6F28E /* JsonParser */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = JsonParser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
