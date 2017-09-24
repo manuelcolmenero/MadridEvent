@@ -14,6 +14,7 @@
 		261C14C61F6EFC2B00C6F28E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 261C14C51F6EFC2B00C6F28E /* Assets.xcassets */; };
 		261C14C91F6EFC2B00C6F28E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 261C14C71F6EFC2B00C6F28E /* LaunchScreen.storyboard */; };
 		261C14D41F6EFC2B00C6F28E /* MadridEventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261C14D31F6EFC2B00C6F28E /* MadridEventTests.swift */; };
+		268CA1661F77C648009A646C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268CA1651F77C648009A646C /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		261C14ED1F6F034D00C6F28E /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		261C14EE1F6F034E00C6F28E /* String+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Image.swift"; sourceTree = "<group>"; };
 		261C14EF1F6F038A00C6F28E /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		268CA1651F77C648009A646C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				268CA1661F77C648009A646C /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +70,7 @@
 				261C14BA1F6EFC2B00C6F28E /* MadridEvent */,
 				261C14D21F6EFC2B00C6F28E /* MadridEventTests */,
 				261C14B91F6EFC2B00C6F28E /* Products */,
+				268CA1641F77C648009A646C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -153,6 +157,14 @@
 			path = JsonParser;
 			sourceTree = "<group>";
 		};
+		268CA1641F77C648009A646C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				268CA1651F77C648009A646C /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -204,6 +216,11 @@
 					261C14B71F6EFC2B00C6F28E = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					261C14CE1F6EFC2B00C6F28E = {
 						CreatedOnToolsVersion = 9.0;
