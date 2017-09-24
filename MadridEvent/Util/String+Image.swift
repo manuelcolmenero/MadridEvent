@@ -1,8 +1,8 @@
 //
 //  String+Image.swift
-//  MadridShops
+//  MadridEvent
 //
-//  Created by Manuel Colmenero Navarro on 18/9/17.
+//  Created by Manuel Colmenero Navarro on 24/9/17.
 //  Copyright © 2017 Manuel Colmenero Navarro. All rights reserved.
 //
 

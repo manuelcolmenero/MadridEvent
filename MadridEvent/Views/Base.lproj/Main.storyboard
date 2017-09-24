@@ -14,7 +14,7 @@
         <!--Home-->
         <scene sceneID="SG6-3C-N7D">
             <objects>
-                <viewController id="X8A-R6-dzV" sceneMemberID="viewController">
+                <viewController id="X8A-R6-dzV" customClass="MainViewController" customModule="MadridEvent" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nB5-f4-Dcb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,12 +24,12 @@
                     <navigationItem key="navigationItem" title="Home" id="UgR-bv-I9k">
                         <barButtonItem key="leftBarButtonItem" title="Activities" id="MBv-bb-OCQ">
                             <connections>
-                                <segue destination="dCY-Yl-veY" kind="show" id="M8G-ui-3Nq"/>
+                                <segue destination="dCY-Yl-veY" kind="show" identifier="ShowActivitiesSegue" id="M8G-ui-3Nq"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Shops" id="13i-fh-971">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="Yd8-ob-iIc"/>
+                                <segue destination="BYZ-38-t0r" kind="show" id="ARJ-yl-nXG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -41,7 +41,7 @@
         <!--Shop List-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Shop List" id="BYZ-38-t0r" customClass="ViewController" customModule="MadridEvent" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Shop List" id="BYZ-38-t0r" customClass="ShopsListViewController" customModule="MadridEvent" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -62,14 +62,14 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="ShopCell" id="vSX-KQ-GXc">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="ShopCell" id="vSX-KQ-GXc" customClass="ShopCollectionViewCell" customModule="MadridEvent" customModuleProvider="target">
                                                 <rect key="frame" x="2" y="0.0" width="371" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                     <rect key="frame" x="0.0" y="0.0" width="371" height="50"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qsn-we-1gL" userLabel="logoShop">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qsn-we-1gL" userLabel="logoShop">
                                                             <rect key="frame" x="20" y="0.0" width="100" height="50"/>
                                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
@@ -78,7 +78,7 @@
                                                                 <constraint firstAttribute="width" constant="100" id="WMJ-tg-Aog"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNy-ra-tvK" userLabel="nameShop">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNy-ra-tvK" userLabel="nameShop">
                                                             <rect key="frame" x="126" y="0.0" width="225" height="50"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -87,10 +87,17 @@
                                                     </subviews>
                                                 </view>
                                                 <constraints>
+                                                    <constraint firstItem="sNy-ra-tvK" firstAttribute="leading" secondItem="vSX-KQ-GXc" secondAttribute="leading" constant="126" id="59v-Jy-jpi"/>
+                                                    <constraint firstItem="Qsn-we-1gL" firstAttribute="leading" secondItem="vSX-KQ-GXc" secondAttribute="leading" constant="20" id="8LA-Ql-gi7"/>
+                                                    <constraint firstAttribute="trailing" secondItem="sNy-ra-tvK" secondAttribute="trailing" constant="20" id="OYQ-eO-kuO"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Qsn-we-1gL" secondAttribute="trailing" constant="251" id="neZ-Zo-vr4"/>
                                                     <constraint firstItem="sNy-ra-tvK" firstAttribute="height" secondItem="Qsn-we-1gL" secondAttribute="height" id="nk0-dR-vhp"/>
+                                                    <constraint firstItem="Qsn-we-1gL" firstAttribute="top" secondItem="vSX-KQ-GXc" secondAttribute="top" id="rxv-gT-Cmf"/>
                                                 </constraints>
                                                 <connections>
-                                                    <segue destination="bhS-Ez-iRq" kind="show" id="RGo-lb-8MH"/>
+                                                    <outlet property="imageView" destination="Qsn-we-1gL" id="yBL-4P-BII"/>
+                                                    <outlet property="labelView" destination="sNy-ra-tvK" id="sE2-xw-Huf"/>
+                                                    <segue destination="bhS-Ez-iRq" kind="show" identifier="ShowShopDetailSegue" id="RGo-lb-8MH"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -115,6 +122,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Shops List" id="IXf-eh-d4E"/>
+                    <connections>
+                        <outlet property="collectionView" destination="kUr-Pm-Ecr" id="MFX-5g-Udf"/>
+                        <outlet property="mapView" destination="ubS-En-kMZ" id="559-tV-AaF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -184,7 +195,7 @@
         <!--Activity List-->
         <scene sceneID="Ds5-uG-m3a">
             <objects>
-                <viewController title="Activity List" id="dCY-Yl-veY" customClass="ViewController" customModule="MadridEvent" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Activity List" id="dCY-Yl-veY" customClass="ActivitiesListViewController" customModule="MadridEvent" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z03-Uh-XU0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -205,14 +216,14 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="ActivityCell" id="B17-kX-oht">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="ActivityCell" id="B17-kX-oht" customClass="ActivityCollectionViewCell" customModule="MadridEvent" customModuleProvider="target">
                                                 <rect key="frame" x="2" y="0.0" width="371" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                     <rect key="frame" x="0.0" y="0.0" width="371" height="50"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t7b-qg-eQ8" userLabel="logoActivity">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t7b-qg-eQ8" userLabel="logoActivity">
                                                             <rect key="frame" x="20" y="0.0" width="100" height="50"/>
                                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
@@ -221,7 +232,7 @@
                                                                 <constraint firstAttribute="width" constant="100" id="UUG-xE-Y6V"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JhY-Bm-eG7" userLabel="nameActivity">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JhY-Bm-eG7" userLabel="nameActivity">
                                                             <rect key="frame" x="126" y="0.0" width="225" height="50"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -230,9 +241,17 @@
                                                     </subviews>
                                                 </view>
                                                 <constraints>
+                                                    <constraint firstItem="JhY-Bm-eG7" firstAttribute="top" secondItem="B17-kX-oht" secondAttribute="top" id="BOV-1z-1zx"/>
+                                                    <constraint firstItem="t7b-qg-eQ8" firstAttribute="leading" secondItem="B17-kX-oht" secondAttribute="leading" constant="20" id="Dlm-G8-b4E"/>
+                                                    <constraint firstAttribute="trailing" secondItem="JhY-Bm-eG7" secondAttribute="trailing" constant="20" id="F6S-5g-6HJ"/>
                                                     <constraint firstItem="JhY-Bm-eG7" firstAttribute="height" secondItem="t7b-qg-eQ8" secondAttribute="height" id="eGH-ZT-rd7"/>
+                                                    <constraint firstItem="t7b-qg-eQ8" firstAttribute="top" secondItem="B17-kX-oht" secondAttribute="top" id="evw-ex-nKb"/>
+                                                    <constraint firstItem="JhY-Bm-eG7" firstAttribute="leading" secondItem="B17-kX-oht" secondAttribute="leading" constant="126" id="iKa-6T-FnP"/>
+                                                    <constraint firstAttribute="trailing" secondItem="t7b-qg-eQ8" secondAttribute="trailing" constant="251" id="xsd-aW-wSm"/>
                                                 </constraints>
                                                 <connections>
+                                                    <outlet property="imageView" destination="t7b-qg-eQ8" id="jit-n5-rU3"/>
+                                                    <outlet property="labelView" destination="JhY-Bm-eG7" id="alP-Z4-pmk"/>
                                                     <segue destination="4Fj-Wn-fat" kind="show" id="KsM-Oi-o7Y"/>
                                                 </connections>
                                             </collectionViewCell>
