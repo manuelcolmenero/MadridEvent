@@ -7,11 +7,16 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 import CoreData
 
 class ActivitiesListViewController: UIViewController {
     
     var context : NSManagedObjectContext!
+    
+    @IBOutlet weak var mapActivityView: MKMapView!
+    @IBOutlet weak var collectionActivityView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

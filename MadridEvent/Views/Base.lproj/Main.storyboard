@@ -29,7 +29,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Shops" id="13i-fh-971">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="ARJ-yl-nXG"/>
+                                <segue destination="BYZ-38-t0r" kind="show" identifier="ShowShopsSegue" id="ARJ-yl-nXG"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -131,10 +131,10 @@
             </objects>
             <point key="canvasLocation" x="1278" y="-206"/>
         </scene>
-        <!--View Controller-->
+        <!--Shop Detail View Controller-->
         <scene sceneID="KmL-oK-A82">
             <objects>
-                <viewController id="bhS-Ez-iRq" sceneMemberID="viewController">
+                <viewController id="bhS-Ez-iRq" customClass="ShopDetailViewController" customModule="MadridEvent" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F5L-ks-fV1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -169,6 +169,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Oq8-1r-xkn"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="fWf-Wd-74W" id="LnZ-Ve-eeN"/>
+                        <outlet property="shopDetailDescription" destination="aUu-p4-Xcn" id="XI8-Ih-ymM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n2J-WR-DF0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -252,7 +256,7 @@
                                                 <connections>
                                                     <outlet property="imageView" destination="t7b-qg-eQ8" id="jit-n5-rU3"/>
                                                     <outlet property="labelView" destination="JhY-Bm-eG7" id="alP-Z4-pmk"/>
-                                                    <segue destination="4Fj-Wn-fat" kind="show" id="KsM-Oi-o7Y"/>
+                                                    <segue destination="4Fj-Wn-fat" kind="show" identifier="ShowActivityDetailSegue" id="KsM-Oi-o7Y"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -277,15 +281,19 @@
                         <viewLayoutGuide key="safeArea" id="E4u-0n-V4o"/>
                     </view>
                     <navigationItem key="navigationItem" title="Activities List" id="K5S-PZ-QIR"/>
+                    <connections>
+                        <outlet property="collectionActivityView" destination="Hbd-WD-JqM" id="zsN-vB-i1d"/>
+                        <outlet property="mapActivityView" destination="swf-hw-UjH" id="2ol-1c-j72"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qpu-mu-hR8" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1278" y="480"/>
         </scene>
-        <!--View Controller-->
+        <!--Activity Detail View Controller-->
         <scene sceneID="7kH-CG-ce1">
             <objects>
-                <viewController id="4Fj-Wn-fat" sceneMemberID="viewController">
+                <viewController id="4Fj-Wn-fat" customClass="ActivityDetailViewController" customModule="MadridEvent" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sNd-du-TEx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
