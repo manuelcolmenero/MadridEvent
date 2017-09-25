@@ -11,10 +11,10 @@ import CoreData
 
 // MARK: - Fetched results controller
 
- var _shopFetchedResultsController: NSFetchedResultsController<ShopCD>? = nil
+var _shopFetchedResultsController: NSFetchedResultsController<ShopCD>? = nil
 
 
- func shopFetchedResultsController(context: NSManagedObjectContext) -> NSFetchedResultsController<ShopCD> {
+func shopFetchedResultsController(context: NSManagedObjectContext) -> NSFetchedResultsController<ShopCD> {
     
     // Lazy hace lo mismo que preguntar si ya existe y en caso de ser cierto lo devuelve
     if _shopFetchedResultsController != nil {

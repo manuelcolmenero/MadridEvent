@@ -27,7 +27,7 @@ extension ShopsListViewController: UICollectionViewDelegate, UICollectionViewDat
         //let shop: Shop = (self.shops?.get(index: indexPath.row))!
         let shopCD : ShopCD = shopFetchedResultsController(context: context).object(at: indexPath)
         
-        cell.refresh(shop: mapShopCDIntoShop(shopCD: shopCD))
+        cell.refresh(shopCD: shopCD)
         
         return cell
     }

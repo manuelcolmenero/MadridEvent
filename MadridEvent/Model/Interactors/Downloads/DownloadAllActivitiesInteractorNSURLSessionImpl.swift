@@ -27,12 +27,17 @@ class DownloadAllActivitiesInteractorNSURLSessionImpl: DownloadAllActivitiesInte
                     } else {
                         // Se ha localizado un error
                         if let myError = onError {
-                            myError(error!)
+                            myError()
                         }
                     }
                 }
             }
             task.resume()
+        } else {
+            // Se ha localizado un error
+            if let myError = onError {
+                myError()
+            }
         }
     }
     

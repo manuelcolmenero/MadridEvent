@@ -9,9 +9,9 @@
 import UIKit
 
 class ShopDetailViewController: UIViewController {
-
+    
     // shop siempre tendrá valor
-    var shop : Shop!
+    var shopCD : ShopCD!
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var shopDetailDescription: UITextView!
@@ -19,10 +19,15 @@ class ShopDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = self.shop.name
-        self.shopDetailDescription.text = self.shop.descriptionEs
-        self.shop.image.loadImage(into: imageView)
-
+        self.title = self.shopCD.name
+        self.shopDetailDescription.text = self.shopCD.descriptionEs
+        
+        if let data = shopCD.imageData {
+            self.imageView.image = UIImage(data: data)
+        } else {
+            self.imageView.image = #imageLiteral(resourceName: "no_image")
+        }
+        
     }
     
 }

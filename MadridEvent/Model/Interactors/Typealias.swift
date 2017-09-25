@@ -10,4 +10,4 @@ import Foundation
 
 typealias shopsClosure      = (Shops) -> Void
 typealias activitiesClosure = (Activities) -> Void
-typealias errorClosure      = ((Error) -> Void)?
+typealias errorClosure      = (() -> Void)?

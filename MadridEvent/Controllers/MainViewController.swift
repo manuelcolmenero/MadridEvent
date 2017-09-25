@@ -24,15 +24,19 @@ class MainViewController: UIViewController {
     func initializeData() {
         let downloadShopsInteractor : DownloadAllShopsInteractor = DownloadAllShopsInteractorNSURLSessionImpl()
         
-        downloadShopsInteractor.execute { (shops: Shops) in
+        downloadShopsInteractor.execute (onSuccess: { (shops: Shops) in
             
             // Cuando se termina de obtener de internet las shops se guardan en local
             let cacheInteractor = SaveAllShopsInteractorImpl()
             cacheInteractor.execute(shops: shops, context: self.context!, onSuccess: { (shops: Shops) in
                 
                 SetExecutedOnceInteractorImp().execute()
+            }, onError: {
+                print("💩 Error al realizar Cache")
             })
-        }
+        }, onError: {
+            print("💩 Error al conectarse a Internet")
+        })
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -41,6 +45,4 @@ class MainViewController: UIViewController {
             vc.context = self.context
         } 
     }
-    
-    
 }

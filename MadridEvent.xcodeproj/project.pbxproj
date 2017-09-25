@@ -43,6 +43,7 @@
 		26CDD2361F7805B300A88190 /* SaveAllActivitiesInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CDD2351F7805B300A88190 /* SaveAllActivitiesInteractorImpl.swift */; };
 		26CDD2391F78067C00A88190 /* MapShops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CDD2381F78067C00A88190 /* MapShops.swift */; };
 		26CDD23B1F78068500A88190 /* MapActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CDD23A1F78068500A88190 /* MapActivities.swift */; };
+		26D4EEA31F797750007D1E9A /* DownloadAndCacheImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D4EEA21F797750007D1E9A /* DownloadAndCacheImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		26CDD2351F7805B300A88190 /* SaveAllActivitiesInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAllActivitiesInteractorImpl.swift; sourceTree = "<group>"; };
 		26CDD2381F78067C00A88190 /* MapShops.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapShops.swift; sourceTree = "<group>"; };
 		26CDD23A1F78068500A88190 /* MapActivities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapActivities.swift; sourceTree = "<group>"; };
+		26D4EEA21F797750007D1E9A /* DownloadAndCacheImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadAndCacheImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 				26C70AF01F780CA9005A601E /* CoreDataStack.swift */,
 				26C70AF81F7811F1005A601E /* String+Image.swift */,
 				26C70B061F7834E6005A601E /* ShopFetchedResultsController.swift */,
+				26D4EEA21F797750007D1E9A /* DownloadAndCacheImage.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				26CDD2271F7803FD00A88190 /* DownloadAllShopsInteractorNSURLSessionImpl.swift in Sources */,
 				26C70AF31F780D2E005A601E /* MainViewController.swift in Sources */,
 				261C14BE1F6EFC2B00C6F28E /* ShopsListViewController.swift in Sources */,
+				26D4EEA31F797750007D1E9A /* DownloadAndCacheImage.swift in Sources */,
 				261C14BC1F6EFC2B00C6F28E /* AppDelegate.swift in Sources */,
 				26CDD2101F77FC9600A88190 /* Shop.swift in Sources */,
 				26C70B051F782ED2005A601E /* ShopListVC+CollectionVC.swift in Sources */,
