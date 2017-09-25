@@ -21,8 +21,14 @@ func parseShops (data: Data) -> Shops {
             shop.address        = shopJson["address"]          as! String
             shop.descriptionEn  = shopJson["description_en"]   as! String
             shop.descriptionEs  = shopJson["description_es"]   as! String
-            shop.latitude       = shopJson["gps_lat"]          as? Float
-            shop.longitude      = shopJson["gps_lon"]          as? Float
+            
+            shop.latitude       = Float((shopJson["gps_lat"]! as! String)
+                .trimmingCharacters(in: .whitespaces)
+                .replacingOccurrences(of: ",", with: ""))
+            shop.longitude      = Float((shopJson["gps_lon"]! as! String)
+                .trimmingCharacters(in: .whitespaces)
+                .replacingOccurrences(of: ",", with: ""))
+            
             shop.image          = shopJson["img"]              as! String
             shop.logo           = shopJson["logo_img"]         as! String
             shop.openingHoursEn = shopJson["opening_hours_en"] as! String
@@ -49,8 +55,14 @@ func parseActivities (data: Data) -> Activities {
             activity.address        = activityJson["address"]              as! String
             activity.descriptionEn  = activityJson["description_en"]       as! String
             activity.descriptionEs  = activityJson["description_es"]       as! String
-            activity.latitude       = activityJson["gps_lat"]              as? Float
-            activity.longitude      = activityJson["gps_lon"]              as? Float
+            
+            activity.latitude       = Float((activityJson["gps_lat"]! as! String)
+                .trimmingCharacters(in: .whitespaces)
+                .replacingOccurrences(of: ",", with: ""))
+            activity.longitude      = Float((activityJson["gps_lon"]! as! String)
+                .trimmingCharacters(in: .whitespaces)
+                .replacingOccurrences(of: ",", with: ""))
+            
             activity.image          = activityJson["img"]                  as! String
             activity.logo           = activityJson["logo_img"]             as! String
             activity.openingHoursEn = activityJson["opening_hours_en"]     as! String

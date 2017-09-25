@@ -22,10 +22,10 @@ class SaveAllShopsInteractorImpl: SaveAllShopsInteractor {
             try context.save()
             onSuccess(shops)
         } catch {
-            //            Código de error a devolver
-            //            onError(nil)
+            if let myError = onError {
+                myError()
+            }           
         }
-        
     }
     
     func execute(shops: Shops, context: NSManagedObjectContext, onSuccess: @escaping shopsClosure) {
