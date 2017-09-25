@@ -97,7 +97,6 @@
                                                 <connections>
                                                     <outlet property="imageView" destination="Qsn-we-1gL" id="yBL-4P-BII"/>
                                                     <outlet property="labelView" destination="sNy-ra-tvK" id="sE2-xw-Huf"/>
-                                                    <segue destination="bhS-Ez-iRq" kind="show" identifier="ShowShopDetailSegue" id="RGo-lb-8MH"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -125,6 +124,7 @@
                     <connections>
                         <outlet property="collectionView" destination="kUr-Pm-Ecr" id="MFX-5g-Udf"/>
                         <outlet property="mapView" destination="ubS-En-kMZ" id="559-tV-AaF"/>
+                        <segue destination="bhS-Ez-iRq" kind="show" identifier="ShowShopDetailSegue" id="jN3-RJ-lRS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ShopListVC_CollectionVC: UICollectionViewDelegate, UICollectionViewDataSource  {
+extension ShopsListViewController: UICollectionViewDelegate, UICollectionViewDataSource  {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return shopFetchedResultsController(context: context).sections?.count ?? 0
@@ -31,6 +31,4 @@ class ShopListVC_CollectionVC: UICollectionViewDelegate, UICollectionViewDataSou
         
         return cell
     }
-    
-    
 }

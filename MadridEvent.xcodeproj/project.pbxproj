@@ -18,15 +18,11 @@
 		26C70AEF1F780B94005A601E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C70AEE1F780B94005A601E /* CoreData.framework */; };
 		26C70AF11F780CA9005A601E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C70AF01F780CA9005A601E /* CoreDataStack.swift */; };
 		26C70AF31F780D2E005A601E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C70AF21F780D2E005A601E /* MainViewController.swift */; };
-		26C70AF51F780F3C005A601E /* ActivitiesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C70AF41F780F3C005A601E /* ActivitiesListViewController.swift */; };
 		26C70AF71F7810F2005A601E /* ShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C70AF61F7810F2005A601E /* ShopCollectionViewCell.swift */; };
 		26C70AF91F7811F1005A601E /* String+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C70AF81F7811F1005A601E /* String+Image.swift */; };
-		26C70AFB1F781224005A601E /* ActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C70AFA1F781224005A601E /* ActivityCollectionViewCell.swift */; };
-		26C70B011F782E6C005A601E /* ActivityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C70B001F782E6C005A601E /* ActivityDetailViewController.swift */; };
 		26C70B031F782E7D005A601E /* ShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C70B021F782E7D005A601E /* ShopDetailViewController.swift */; };
 		26C70B051F782ED2005A601E /* ShopListVC+CollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C70B041F782ED2005A601E /* ShopListVC+CollectionVC.swift */; };
 		26C70B071F7834E6005A601E /* ShopFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C70B061F7834E6005A601E /* ShopFetchedResultsController.swift */; };
-		26C70B0B1F783565005A601E /* ActivityFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C70B0A1F783565005A601E /* ActivityFetchedResultsController.swift */; };
 		26CDD2101F77FC9600A88190 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CDD20F1F77FC9600A88190 /* Shop.swift */; };
 		26CDD2121F77FCA100A88190 /* Shops.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CDD2111F77FCA100A88190 /* Shops.swift */; };
 		26CDD2141F77FCAC00A88190 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26CDD2131F77FCAC00A88190 /* Activity.swift */; };
@@ -76,15 +72,11 @@
 		26C70AEE1F780B94005A601E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		26C70AF01F780CA9005A601E /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		26C70AF21F780D2E005A601E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		26C70AF41F780F3C005A601E /* ActivitiesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesListViewController.swift; sourceTree = "<group>"; };
 		26C70AF61F7810F2005A601E /* ShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCollectionViewCell.swift; sourceTree = "<group>"; };
 		26C70AF81F7811F1005A601E /* String+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Image.swift"; sourceTree = "<group>"; };
-		26C70AFA1F781224005A601E /* ActivityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCollectionViewCell.swift; sourceTree = "<group>"; };
-		26C70B001F782E6C005A601E /* ActivityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailViewController.swift; sourceTree = "<group>"; };
 		26C70B021F782E7D005A601E /* ShopDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopDetailViewController.swift; sourceTree = "<group>"; };
 		26C70B041F782ED2005A601E /* ShopListVC+CollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopListVC+CollectionVC.swift"; sourceTree = "<group>"; };
 		26C70B061F7834E6005A601E /* ShopFetchedResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopFetchedResultsController.swift; sourceTree = "<group>"; };
-		26C70B0A1F783565005A601E /* ActivityFetchedResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFetchedResultsController.swift; sourceTree = "<group>"; };
 		26CDD20F1F77FC9600A88190 /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 		26CDD2111F77FCA100A88190 /* Shops.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shops.swift; sourceTree = "<group>"; };
 		26CDD2131F77FCAC00A88190 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
@@ -176,7 +168,6 @@
 				26C70AF01F780CA9005A601E /* CoreDataStack.swift */,
 				26C70AF81F7811F1005A601E /* String+Image.swift */,
 				26C70B061F7834E6005A601E /* ShopFetchedResultsController.swift */,
-				26C70B0A1F783565005A601E /* ActivityFetchedResultsController.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -187,7 +178,6 @@
 				261C14BF1F6EFC2B00C6F28E /* Main.storyboard */,
 				261C14C71F6EFC2B00C6F28E /* LaunchScreen.storyboard */,
 				26C70AF61F7810F2005A601E /* ShopCollectionViewCell.swift */,
-				26C70AFA1F781224005A601E /* ActivityCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -195,8 +185,6 @@
 		261C14E91F6F029300C6F28E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				26C70AF41F780F3C005A601E /* ActivitiesListViewController.swift */,
-				26C70B001F782E6C005A601E /* ActivityDetailViewController.swift */,
 				26C70AF21F780D2E005A601E /* MainViewController.swift */,
 				26C70B021F782E7D005A601E /* ShopDetailViewController.swift */,
 				261C14BD1F6EFC2B00C6F28E /* ShopsListViewController.swift */,
@@ -399,11 +387,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				26C70B031F782E7D005A601E /* ShopDetailViewController.swift in Sources */,
-				26C70B011F782E6C005A601E /* ActivityDetailViewController.swift in Sources */,
 				26CDD2141F77FCAC00A88190 /* Activity.swift in Sources */,
 				26CDD22B1F78044500A88190 /* DownloadAllActivitiesInteractor.swift in Sources */,
 				261C14C41F6EFC2B00C6F28E /* MadridEvent.xcdatamodeld in Sources */,
-				26C70B0B1F783565005A601E /* ActivityFetchedResultsController.swift in Sources */,
 				26CDD2301F78054300A88190 /* SaveAllShopsInteractor.swift in Sources */,
 				26CDD2391F78067C00A88190 /* MapShops.swift in Sources */,
 				26CDD21A1F78009100A88190 /* JSONParser.swift in Sources */,
@@ -412,7 +398,6 @@
 				26CDD2321F78055F00A88190 /* SaveAllActivitiesInteractor.swift in Sources */,
 				26C70B071F7834E6005A601E /* ShopFetchedResultsController.swift in Sources */,
 				26CDD2291F78041F00A88190 /* DownloadAllShopsInteractor.swift in Sources */,
-				26C70AFB1F781224005A601E /* ActivityCollectionViewCell.swift in Sources */,
 				26C70AF71F7810F2005A601E /* ShopCollectionViewCell.swift in Sources */,
 				26CDD21C1F78023D00A88190 /* SetExecutedOnceInteractor.swift in Sources */,
 				26CDD2361F7805B300A88190 /* SaveAllActivitiesInteractorImpl.swift in Sources */,
@@ -429,7 +414,6 @@
 				26C70AF11F780CA9005A601E /* CoreDataStack.swift in Sources */,
 				26CDD2221F7803A300A88190 /* ExecuteOnceInteractor.swift in Sources */,
 				26CDD23B1F78068500A88190 /* MapActivities.swift in Sources */,
-				26C70AF51F780F3C005A601E /* ActivitiesListViewController.swift in Sources */,
 				26CDD21E1F78024B00A88190 /* SetExecutedOnceInteractorImpl.swift in Sources */,
 				26CDD2161F77FCB600A88190 /* Activities.swift in Sources */,
 			);
@@ -521,7 +505,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -572,7 +556,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

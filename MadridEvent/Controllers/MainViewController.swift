@@ -39,10 +39,7 @@ class MainViewController: UIViewController {
         if segue.identifier == "ShowShopsSegue" {
             let vc     = segue.destination as! ShopsListViewController
             vc.context = self.context
-        } else if segue.identifier == "ShowActivitiesSegue" {
-            let vc     = segue.destination as! ActivitiesListViewController
-            vc.context = self.context
-        }
+        } 
     }
     
     
