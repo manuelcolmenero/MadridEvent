@@ -31,6 +31,7 @@ class MainViewController: UIViewController {
             cacheInteractor.execute(shops: shops, context: self.context!, onSuccess: { (shops: Shops) in
                 
                 SetExecutedOnceInteractorImp().execute()
+                
             }, onError: {
                 print("💩 Error al realizar Cache")
             })

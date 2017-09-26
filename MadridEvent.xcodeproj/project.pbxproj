@@ -15,6 +15,10 @@
 		261C14C91F6EFC2B00C6F28E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 261C14C71F6EFC2B00C6F28E /* LaunchScreen.storyboard */; };
 		261C14D41F6EFC2B00C6F28E /* MadridEventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261C14D31F6EFC2B00C6F28E /* MadridEventTests.swift */; };
 		268CA1661F77C648009A646C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268CA1651F77C648009A646C /* MapKit.framework */; };
+		26B11B251F7AC17F0020EB00 /* ShopListVC+MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B11B241F7AC17F0020EB00 /* ShopListVC+MapVC.swift */; };
+		26B11B271F7AC3220020EB00 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B11B261F7AC3220020EB00 /* Annotation.swift */; };
+		26B11B291F7AD4960020EB00 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B11B281F7AD4960020EB00 /* Constants.swift */; };
+		26B11B2B1F7ADE0F0020EB00 /* DevideLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B11B2A1F7ADE0F0020EB00 /* DevideLanguage.swift */; };
 		26C70AEF1F780B94005A601E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C70AEE1F780B94005A601E /* CoreData.framework */; };
 		26C70AF11F780CA9005A601E /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C70AF01F780CA9005A601E /* CoreDataStack.swift */; };
 		26C70AF31F780D2E005A601E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26C70AF21F780D2E005A601E /* MainViewController.swift */; };
@@ -70,6 +74,10 @@
 		261C14D51F6EFC2B00C6F28E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		261C14EF1F6F038A00C6F28E /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		268CA1651F77C648009A646C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		26B11B241F7AC17F0020EB00 /* ShopListVC+MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopListVC+MapVC.swift"; sourceTree = "<group>"; };
+		26B11B261F7AC3220020EB00 /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
+		26B11B281F7AD4960020EB00 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		26B11B2A1F7ADE0F0020EB00 /* DevideLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevideLanguage.swift; sourceTree = "<group>"; };
 		26C70AEE1F780B94005A601E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		26C70AF01F780CA9005A601E /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		26C70AF21F780D2E005A601E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -167,10 +175,12 @@
 		261C14E71F6F027100C6F28E /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				26B11B261F7AC3220020EB00 /* Annotation.swift */,
 				26C70AF01F780CA9005A601E /* CoreDataStack.swift */,
-				26C70AF81F7811F1005A601E /* String+Image.swift */,
-				26C70B061F7834E6005A601E /* ShopFetchedResultsController.swift */,
+				26B11B2A1F7ADE0F0020EB00 /* DevideLanguage.swift */,
 				26D4EEA21F797750007D1E9A /* DownloadAndCacheImage.swift */,
+				26C70B061F7834E6005A601E /* ShopFetchedResultsController.swift */,
+				26C70AF81F7811F1005A601E /* String+Image.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -192,6 +202,7 @@
 				26C70B021F782E7D005A601E /* ShopDetailViewController.swift */,
 				261C14BD1F6EFC2B00C6F28E /* ShopsListViewController.swift */,
 				26C70B041F782ED2005A601E /* ShopListVC+CollectionVC.swift */,
+				26B11B241F7AC17F0020EB00 /* ShopListVC+MapVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -218,6 +229,7 @@
 				26CDD2241F7803D400A88190 /* ExecuteOnce */,
 				26CDD2371F78066D00A88190 /* Mappers */,
 				26CDD2171F78002B00A88190 /* Typealias.swift */,
+				26B11B281F7AD4960020EB00 /* Constants.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -390,7 +402,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				26C70B031F782E7D005A601E /* ShopDetailViewController.swift in Sources */,
+				26B11B291F7AD4960020EB00 /* Constants.swift in Sources */,
 				26CDD2141F77FCAC00A88190 /* Activity.swift in Sources */,
+				26B11B251F7AC17F0020EB00 /* ShopListVC+MapVC.swift in Sources */,
 				26CDD22B1F78044500A88190 /* DownloadAllActivitiesInteractor.swift in Sources */,
 				261C14C41F6EFC2B00C6F28E /* MadridEvent.xcdatamodeld in Sources */,
 				26CDD2301F78054300A88190 /* SaveAllShopsInteractor.swift in Sources */,
@@ -407,7 +421,9 @@
 				26CDD2121F77FCA100A88190 /* Shops.swift in Sources */,
 				26CDD2341F7805A400A88190 /* SaveAllShopsInteractorImpl.swift in Sources */,
 				26CDD2271F7803FD00A88190 /* DownloadAllShopsInteractorNSURLSessionImpl.swift in Sources */,
+				26B11B271F7AC3220020EB00 /* Annotation.swift in Sources */,
 				26C70AF31F780D2E005A601E /* MainViewController.swift in Sources */,
+				26B11B2B1F7ADE0F0020EB00 /* DevideLanguage.swift in Sources */,
 				261C14BE1F6EFC2B00C6F28E /* ShopsListViewController.swift in Sources */,
 				26D4EEA31F797750007D1E9A /* DownloadAndCacheImage.swift in Sources */,
 				261C14BC1F6EFC2B00C6F28E /* AppDelegate.swift in Sources */,

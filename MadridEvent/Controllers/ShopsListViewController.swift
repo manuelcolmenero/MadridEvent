@@ -14,7 +14,7 @@ import CoreData
 class ShopsListViewController: UIViewController {
     
     var context : NSManagedObjectContext!
-    //    let locationManager = CLLocationManager()
+    let locationManager = CLLocationManager()
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -22,18 +22,22 @@ class ShopsListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //        self.locationManager.requestWhenInUseAuthorization()
-        //        self.locationManager.delegate = self
-        //        self.locationManager.startUpdatingLocation()
-        //
-        //        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        //        self.mapView.showsUserLocation = true
-        //
-        //        let madridLocation = CLLocation(latitude:  40.416775, longitude: -3.703790)
-        //        self.mapView.setCenter(madridLocation.coordinate, animated: true)
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.startUpdatingLocation()
+        self.locationManager.delegate = self
+        self.mapView.delegate = self
         
         self.collectionView.dataSource = self
         self.collectionView.delegate   = self
+
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.mapView.showsUserLocation = true
+        
+        let madridLocation = CLLocation(latitude:  40.416775, longitude: -3.703790)
+        let madridRegion = MKCoordinateRegion(center: madridLocation.coordinate, span:
+            MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+        
+        self.mapView.setRegion(madridRegion, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
