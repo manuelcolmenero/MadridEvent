@@ -13,17 +13,25 @@ class ShopCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var labelView: UILabel!
+    @IBOutlet weak var openingHoursView: UILabel!
     
     func refresh(shopCD: ShopCD) {
         self.shopCD  = shopCD
         
         // Se informan los campos de la celda
         self.labelView.text = shopCD.name
+        self.openingHoursView.text = translateOpeningHours(shopCD: shopCD)
         
         if let data = shopCD.logoData {
             self.imageView.image = UIImage(data: data)
         } else {
             self.imageView.image = #imageLiteral(resourceName: "no_image")
+        }
+        
+        if let imageData = shopCD.imageData {
+            self.contentView.backgroundColor = UIColor(patternImage: UIImage(data: imageData)!)
+        } else {
+            self.contentView.backgroundColor = UIColor.lightGray
         }
         
         imageView.clipsToBounds = true

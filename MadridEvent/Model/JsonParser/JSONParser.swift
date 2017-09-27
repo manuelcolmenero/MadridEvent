@@ -37,7 +37,7 @@ func parseShops (data: Data) -> Shops {
             shops.add(shop: shop)
         }
     } catch {
-        // Muestreo del error
+        print(displayError(textError: JSONParseError))
     }
     return shops
 }
@@ -71,7 +71,7 @@ func parseActivities (data: Data) -> Activities {
             activities.add(activity: activity)
         }
     } catch {
-        // Muestreo del error
+        print(displayError(textError: JSONParseError))
     }
     return activities
 }

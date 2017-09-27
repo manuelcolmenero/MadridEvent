@@ -29,7 +29,7 @@ extension ShopsListViewController: CLLocationManagerDelegate, MKMapViewDelegate 
         let shopLocation = CLLocation(latitude: CLLocationDegrees(shopCD.latitude),
                                       longitude: CLLocationDegrees(shopCD.longitude))
         
-        let subtitle: String = shopCD.openingHoursEs!
+        let subtitle: String = translateOpeningHours(shopCD: shopCD)
         
         let annotation = Annotation(coordinate: shopLocation.coordinate,
                                     title: shopCD.name,
@@ -62,21 +62,21 @@ extension ShopsListViewController: CLLocationManagerDelegate, MKMapViewDelegate 
             // Se crea una anotación con la tienda seleccionada
             let shopCD = (annotation as! Annotation).getShopCD()
             
-//            // Se informa la imagen de la tienda
-//            let image: UIImage
-//            if let logo = shopCD.logoData {
-//                image = UIImage(data: logo)!
-//            } else {
-//                image = #imageLiteral(resourceName: "no_image")
-//            }
-//
+            // Se informa la imagen de la tienda
+            let image: UIImage
+            if let logo = shopCD.logoData {
+                image = UIImage(data: logo)!
+            } else {
+                image = #imageLiteral(resourceName: "no_image")
+            }
+
             let rigthButton = UIButton(type: .detailDisclosure)
-//            let leftButton = UIImageView(image: image)
-//            leftButton.frame.size.height = 44
-//            leftButton.frame.size.width = 44
-//
+            let leftButton = UIImageView(image: image)
+            leftButton.frame.size.height = 44
+            leftButton.frame.size.width = 44
+
             pinView?.rightCalloutAccessoryView = rigthButton
-//            pinView?.leftCalloutAccessoryView = leftButton
+            pinView?.leftCalloutAccessoryView = leftButton
         } else {
             pinView?.annotation = annotation
         }

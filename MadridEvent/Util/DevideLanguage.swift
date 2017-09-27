@@ -13,9 +13,16 @@ public enum DeviceLanguageTypes {
     case Es
 }
 
-func deviceLanguage() -> DeviceLanguageTypes {
+func deviceLanguage() -> String {
     
     let language = Locale.current.languageCode
     
-    return language == "en" ? DeviceLanguageTypes.En : DeviceLanguageTypes.Es
+    switch language {
+    case "en"?:
+        return englishLanguage
+    case "es"?:
+        return spanishLanguage
+    default:
+        return spanishLanguage
+    }
 }

@@ -18,7 +18,7 @@ func downloadAndCacheImage(urlString: String) -> Data {
             data = try Data(contentsOf: myUrl)
             return data
         } catch {
-            print("💩 Error al crear la UIImage con URL: " + url)
+            print(displayError(textError: CacheImageError) + url)
         }
     }
     return data

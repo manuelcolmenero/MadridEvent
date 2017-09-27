@@ -20,18 +20,12 @@ class ShopDetailViewController: UIViewController {
         super.viewDidLoad()
         
         self.title = self.shopCD.name
-        self.shopDetailDescription.text = self.shopCD.descriptionEs
+        self.shopDetailDescription.text = translateDescription(shopCD: shopCD)
         
         if let mapData = shopCD.locationData {
             self.imageView.image = UIImage(data: mapData)
         } else {
             self.imageView.image = #imageLiteral(resourceName: "no_map")
         }
-        
-//        if let imageData = shopCD.imageData {
-//            self.view.backgroundColor = UIColor(patternImage: UIImage(data: imageData)!)
-//        } else {
-//            self.view.backgroundColor = UIColor.lightGray
-//        }
     }
 }

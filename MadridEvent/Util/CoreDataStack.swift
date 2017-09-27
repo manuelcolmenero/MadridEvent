@@ -15,7 +15,6 @@ public class CoreDataStack {
     public func createContainer(dbName: String) -> NSPersistentContainer {
         let container = NSPersistentContainer(name: dbName)
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            //print("💾 \( storeDescription.description )" )
             if let error = error as NSError? {
                 fatalError("💩 Unresolved error \(error), \(error.userInfo)")
             }

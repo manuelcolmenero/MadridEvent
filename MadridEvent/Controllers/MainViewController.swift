@@ -33,10 +33,12 @@ class MainViewController: UIViewController {
                 SetExecutedOnceInteractorImp().execute()
                 
             }, onError: {
-                print("💩 Error al realizar Cache")
+                print(displayError(textError: CacheError))
             })
         }, onError: {
-            print("💩 Error al conectarse a Internet")
+            userPopUp(title: "Error", message: displayError(textError: ConnectionError), vc: self, onCompletion: {
+                // una vez pulsa el boton de OK
+            })
         })
     }
     
