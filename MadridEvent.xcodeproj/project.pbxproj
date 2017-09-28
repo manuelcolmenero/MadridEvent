@@ -14,6 +14,10 @@
 		261C14C61F6EFC2B00C6F28E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 261C14C51F6EFC2B00C6F28E /* Assets.xcassets */; };
 		261C14C91F6EFC2B00C6F28E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 261C14C71F6EFC2B00C6F28E /* LaunchScreen.storyboard */; };
 		261C14D41F6EFC2B00C6F28E /* MadridEventTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261C14D31F6EFC2B00C6F28E /* MadridEventTests.swift */; };
+		262B57251F7D7A1F004EA23E /* ActivityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262B57241F7D7A1F004EA23E /* ActivityDetailViewController.swift */; };
+		262B57271F7D7A31004EA23E /* ActivitiesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262B57261F7D7A31004EA23E /* ActivitiesListViewController.swift */; };
+		262B57291F7D7A40004EA23E /* ActivityListVC+CollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262B57281F7D7A40004EA23E /* ActivityListVC+CollectionVC.swift */; };
+		262B572B1F7D7A52004EA23E /* ActivityListVC+MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262B572A1F7D7A52004EA23E /* ActivityListVC+MapVC.swift */; };
 		2630D0811F7C1227008E56B1 /* String+Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2630D0801F7C1227008E56B1 /* String+Language.swift */; };
 		2630D0841F7C2860008E56B1 /* UserPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2630D0831F7C2860008E56B1 /* UserPopUp.swift */; };
 		268CA1661F77C648009A646C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268CA1651F77C648009A646C /* MapKit.framework */; };
@@ -75,6 +79,10 @@
 		261C14D31F6EFC2B00C6F28E /* MadridEventTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MadridEventTests.swift; sourceTree = "<group>"; };
 		261C14D51F6EFC2B00C6F28E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		261C14EF1F6F038A00C6F28E /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		262B57241F7D7A1F004EA23E /* ActivityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailViewController.swift; sourceTree = "<group>"; };
+		262B57261F7D7A31004EA23E /* ActivitiesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesListViewController.swift; sourceTree = "<group>"; };
+		262B57281F7D7A40004EA23E /* ActivityListVC+CollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityListVC+CollectionVC.swift"; sourceTree = "<group>"; };
+		262B572A1F7D7A52004EA23E /* ActivityListVC+MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityListVC+MapVC.swift"; sourceTree = "<group>"; };
 		2630D0801F7C1227008E56B1 /* String+Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Language.swift"; sourceTree = "<group>"; };
 		2630D0831F7C2860008E56B1 /* UserPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPopUp.swift; sourceTree = "<group>"; };
 		268CA1651F77C648009A646C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -204,6 +212,7 @@
 		261C14E91F6F029300C6F28E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				262B57231F7D79F1004EA23E /* ActivityController */,
 				2630D0821F7C2669008E56B1 /* ShopController */,
 				26C70AF21F780D2E005A601E /* MainViewController.swift */,
 			);
@@ -243,6 +252,17 @@
 				26CDD2191F78009100A88190 /* JSONParser.swift */,
 			);
 			path = JsonParser;
+			sourceTree = "<group>";
+		};
+		262B57231F7D79F1004EA23E /* ActivityController */ = {
+			isa = PBXGroup;
+			children = (
+				262B57261F7D7A31004EA23E /* ActivitiesListViewController.swift */,
+				262B57241F7D7A1F004EA23E /* ActivityDetailViewController.swift */,
+				262B57281F7D7A40004EA23E /* ActivityListVC+CollectionVC.swift */,
+				262B572A1F7D7A52004EA23E /* ActivityListVC+MapVC.swift */,
+			);
+			path = ActivityController;
 			sourceTree = "<group>";
 		};
 		2630D0821F7C2669008E56B1 /* ShopController */ = {
@@ -425,9 +445,11 @@
 				26CDD2301F78054300A88190 /* SaveAllShopsInteractor.swift in Sources */,
 				26CDD2391F78067C00A88190 /* MapShops.swift in Sources */,
 				26CDD21A1F78009100A88190 /* JSONParser.swift in Sources */,
+				262B57271F7D7A31004EA23E /* ActivitiesListViewController.swift in Sources */,
 				26C70AF91F7811F1005A601E /* String+Image.swift in Sources */,
 				26CDD2201F78039900A88190 /* ExecuteOnceInteractorImpl.swift in Sources */,
 				26CDD2321F78055F00A88190 /* SaveAllActivitiesInteractor.swift in Sources */,
+				262B572B1F7D7A52004EA23E /* ActivityListVC+MapVC.swift in Sources */,
 				26C70B071F7834E6005A601E /* ShopFetchedResultsController.swift in Sources */,
 				26CDD2291F78041F00A88190 /* DownloadAllShopsInteractor.swift in Sources */,
 				26C70AF71F7810F2005A601E /* ShopCollectionViewCell.swift in Sources */,
@@ -440,6 +462,7 @@
 				26C70AF31F780D2E005A601E /* MainViewController.swift in Sources */,
 				26B11B2B1F7ADE0F0020EB00 /* DevideLanguage.swift in Sources */,
 				261C14BE1F6EFC2B00C6F28E /* ShopsListViewController.swift in Sources */,
+				262B57291F7D7A40004EA23E /* ActivityListVC+CollectionVC.swift in Sources */,
 				26D4EEA31F797750007D1E9A /* DownloadAndCacheImage.swift in Sources */,
 				261C14BC1F6EFC2B00C6F28E /* AppDelegate.swift in Sources */,
 				26CDD2101F77FC9600A88190 /* Shop.swift in Sources */,
@@ -451,6 +474,7 @@
 				26CDD2221F7803A300A88190 /* ExecuteOnceInteractor.swift in Sources */,
 				26CDD23B1F78068500A88190 /* MapActivities.swift in Sources */,
 				26CDD21E1F78024B00A88190 /* SetExecutedOnceInteractorImpl.swift in Sources */,
+				262B57251F7D7A1F004EA23E /* ActivityDetailViewController.swift in Sources */,
 				26CDD2161F77FCB600A88190 /* Activities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
