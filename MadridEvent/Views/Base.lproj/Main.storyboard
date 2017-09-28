@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -306,7 +307,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="ShopCell" id="AYg-tY-cPU" userLabel="ActivityCell" customClass="ShopCollectionViewCell" customModule="MadridEvent" customModuleProvider="target">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="ActivityCell" id="AYg-tY-cPU" userLabel="ActivityCell" customClass="ActivityCollectionViewCell" customModule="MadridEvent" customModuleProvider="target">
                                                 <rect key="frame" x="2" y="0.0" width="371" height="100"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -342,8 +343,8 @@
                                                     <constraint firstItem="jNr-XZ-aeh" firstAttribute="leading" secondItem="dtO-32-hvG" secondAttribute="trailing" constant="10" id="yMw-3r-6i9"/>
                                                 </constraints>
                                                 <connections>
-                                                    <outlet property="imageView" destination="dtO-32-hvG" id="e5P-D8-n3j"/>
-                                                    <outlet property="labelView" destination="jNr-XZ-aeh" id="A1r-GM-4f0"/>
+                                                    <outlet property="imageView" destination="dtO-32-hvG" id="fbl-bH-pRJ"/>
+                                                    <outlet property="labelView" destination="jNr-XZ-aeh" id="5zd-O1-WWH"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -364,7 +365,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nLx-hq-JgQ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Shops List" id="FCN-3u-IJt"/>
+                    <navigationItem key="navigationItem" title="Activities List" id="FCN-3u-IJt"/>
                     <connections>
                         <outlet property="collectionView" destination="Rhd-MT-1OT" id="I1p-nN-PwV"/>
                         <outlet property="mapView" destination="ASe-Yy-ZTe" id="3bl-fB-hRi"/>
@@ -373,7 +374,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wya-uz-STO" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1278" y="496"/>
+            <point key="canvasLocation" x="1278" y="573"/>
         </scene>
         <!--Activity Detail View Controller-->
         <scene sceneID="XR3-jB-VGu">
@@ -391,7 +392,7 @@
                                     <constraint firstAttribute="width" constant="300" id="xDu-N0-DPd"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="l6C-XA-OWg">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="l6C-XA-OWg" userLabel="Detail Description">
                                 <rect key="frame" x="37.5" y="233" width="300" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -426,14 +427,14 @@
                         <viewLayoutGuide key="safeArea" id="Ctq-gf-o54"/>
                     </view>
                     <connections>
-                        <outlet property="addressView" destination="Tey-R3-SJe" id="xdg-vj-MyZ"/>
-                        <outlet property="imageView" destination="MK3-Nb-r5l" id="wZJ-ro-wYZ"/>
-                        <outlet property="shopDetailDescription" destination="l6C-XA-OWg" id="193-tD-0Vl"/>
+                        <outlet property="activityDetailDescription" destination="l6C-XA-OWg" id="b7U-yL-so3"/>
+                        <outlet property="addressView" destination="Tey-R3-SJe" id="iYO-YR-p82"/>
+                        <outlet property="imageView" destination="MK3-Nb-r5l" id="jKY-4y-o5l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HRf-Bv-EmO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2209" y="495"/>
+            <point key="canvasLocation" x="2209" y="573"/>
         </scene>
     </scenes>
     <resources>

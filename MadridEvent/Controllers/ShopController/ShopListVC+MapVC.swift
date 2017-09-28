@@ -31,7 +31,7 @@ extension ShopsListViewController: CLLocationManagerDelegate, MKMapViewDelegate 
         
         let subtitle: String = translateOpeningHours(shopCD: shopCD)
         
-        let annotation = Annotation(coordinate: shopLocation.coordinate,
+        let annotation = AnnotationShop(coordinate: shopLocation.coordinate,
                                     title: shopCD.name,
                                     subtitle: subtitle,
                                     shopCD: shopCD)
@@ -60,7 +60,7 @@ extension ShopsListViewController: CLLocationManagerDelegate, MKMapViewDelegate 
             pinView?.canShowCallout = true
             
             // Se crea una anotación con la tienda seleccionada
-            let shopCD = (annotation as! Annotation).getShopCD()
+            let shopCD = (annotation as! AnnotationShop).getShopCD()
             
             // Se informa la imagen de la tienda
             let image: UIImage
@@ -88,7 +88,7 @@ extension ShopsListViewController: CLLocationManagerDelegate, MKMapViewDelegate 
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         
         // Se obtienen los datos de la anotación y se invoca al detalle
-        if let annotation = view.annotation as? Annotation {
+        if let annotation = view.annotation as? AnnotationShop {
             let shopCD = annotation.getShopCD()
             performSegue(withIdentifier: "ShowShopDetailSegue", sender: shopCD)
         }

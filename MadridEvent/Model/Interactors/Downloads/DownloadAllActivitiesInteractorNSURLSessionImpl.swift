@@ -11,7 +11,7 @@ import Foundation
 class DownloadAllActivitiesInteractorNSURLSessionImpl: DownloadAllActivitiesInteractor {
     func execute(onSuccess: @escaping activitiesClosure, onError: errorClosure) {
         
-        let urlString =  "http://madrid-shops.com/json_new/getActivities.php"
+        let urlString =  activityAPI
         
         let session = URLSession.shared
         if let url = URL(string: urlString) {

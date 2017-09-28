@@ -43,5 +43,10 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Para continuar, permite que el dispositivo active la ubicación que usa el servicio de ubicación.</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

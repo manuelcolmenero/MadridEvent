@@ -18,8 +18,10 @@
 		262B57271F7D7A31004EA23E /* ActivitiesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262B57261F7D7A31004EA23E /* ActivitiesListViewController.swift */; };
 		262B57291F7D7A40004EA23E /* ActivityListVC+CollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262B57281F7D7A40004EA23E /* ActivityListVC+CollectionVC.swift */; };
 		262B572B1F7D7A52004EA23E /* ActivityListVC+MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262B572A1F7D7A52004EA23E /* ActivityListVC+MapVC.swift */; };
+		262B572D1F7D828E004EA23E /* ActivityFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262B572C1F7D828E004EA23E /* ActivityFetchedResultsController.swift */; };
 		2630D0811F7C1227008E56B1 /* String+Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2630D0801F7C1227008E56B1 /* String+Language.swift */; };
 		2630D0841F7C2860008E56B1 /* UserPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2630D0831F7C2860008E56B1 /* UserPopUp.swift */; };
+		263ED4771F7D8528002A0D77 /* ActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263ED4761F7D8528002A0D77 /* ActivityCollectionViewCell.swift */; };
 		268CA1661F77C648009A646C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 268CA1651F77C648009A646C /* MapKit.framework */; };
 		26B11B251F7AC17F0020EB00 /* ShopListVC+MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B11B241F7AC17F0020EB00 /* ShopListVC+MapVC.swift */; };
 		26B11B271F7AC3220020EB00 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B11B261F7AC3220020EB00 /* Annotation.swift */; };
@@ -83,8 +85,10 @@
 		262B57261F7D7A31004EA23E /* ActivitiesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesListViewController.swift; sourceTree = "<group>"; };
 		262B57281F7D7A40004EA23E /* ActivityListVC+CollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityListVC+CollectionVC.swift"; sourceTree = "<group>"; };
 		262B572A1F7D7A52004EA23E /* ActivityListVC+MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityListVC+MapVC.swift"; sourceTree = "<group>"; };
+		262B572C1F7D828E004EA23E /* ActivityFetchedResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityFetchedResultsController.swift; sourceTree = "<group>"; };
 		2630D0801F7C1227008E56B1 /* String+Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Language.swift"; sourceTree = "<group>"; };
 		2630D0831F7C2860008E56B1 /* UserPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPopUp.swift; sourceTree = "<group>"; };
+		263ED4761F7D8528002A0D77 /* ActivityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCollectionViewCell.swift; sourceTree = "<group>"; };
 		268CA1651F77C648009A646C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		26B11B241F7AC17F0020EB00 /* ShopListVC+MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopListVC+MapVC.swift"; sourceTree = "<group>"; };
 		26B11B261F7AC3220020EB00 /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
@@ -191,7 +195,7 @@
 				26C70AF01F780CA9005A601E /* CoreDataStack.swift */,
 				26B11B2A1F7ADE0F0020EB00 /* DevideLanguage.swift */,
 				26D4EEA21F797750007D1E9A /* DownloadAndCacheImage.swift */,
-				26C70B061F7834E6005A601E /* ShopFetchedResultsController.swift */,
+				262B572E1F7D82D5004EA23E /* FetchedResultsController */,
 				26C70AF81F7811F1005A601E /* String+Image.swift */,
 				2630D0801F7C1227008E56B1 /* String+Language.swift */,
 				2630D0831F7C2860008E56B1 /* UserPopUp.swift */,
@@ -205,6 +209,7 @@
 				261C14BF1F6EFC2B00C6F28E /* Main.storyboard */,
 				261C14C71F6EFC2B00C6F28E /* LaunchScreen.storyboard */,
 				26C70AF61F7810F2005A601E /* ShopCollectionViewCell.swift */,
+				263ED4761F7D8528002A0D77 /* ActivityCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -263,6 +268,15 @@
 				262B572A1F7D7A52004EA23E /* ActivityListVC+MapVC.swift */,
 			);
 			path = ActivityController;
+			sourceTree = "<group>";
+		};
+		262B572E1F7D82D5004EA23E /* FetchedResultsController */ = {
+			isa = PBXGroup;
+			children = (
+				262B572C1F7D828E004EA23E /* ActivityFetchedResultsController.swift */,
+				26C70B061F7834E6005A601E /* ShopFetchedResultsController.swift */,
+			);
+			name = FetchedResultsController;
 			sourceTree = "<group>";
 		};
 		2630D0821F7C2669008E56B1 /* ShopController */ = {
@@ -436,12 +450,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				26C70B031F782E7D005A601E /* ShopDetailViewController.swift in Sources */,
+				263ED4771F7D8528002A0D77 /* ActivityCollectionViewCell.swift in Sources */,
 				26B11B291F7AD4960020EB00 /* Constants.swift in Sources */,
 				26CDD2141F77FCAC00A88190 /* Activity.swift in Sources */,
 				26B11B251F7AC17F0020EB00 /* ShopListVC+MapVC.swift in Sources */,
 				2630D0841F7C2860008E56B1 /* UserPopUp.swift in Sources */,
 				26CDD22B1F78044500A88190 /* DownloadAllActivitiesInteractor.swift in Sources */,
 				261C14C41F6EFC2B00C6F28E /* MadridEvent.xcdatamodeld in Sources */,
+				262B572D1F7D828E004EA23E /* ActivityFetchedResultsController.swift in Sources */,
 				26CDD2301F78054300A88190 /* SaveAllShopsInteractor.swift in Sources */,
 				26CDD2391F78067C00A88190 /* MapShops.swift in Sources */,
 				26CDD21A1F78009100A88190 /* JSONParser.swift in Sources */,

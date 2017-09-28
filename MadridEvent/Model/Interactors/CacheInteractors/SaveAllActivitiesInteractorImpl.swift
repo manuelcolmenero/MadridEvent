@@ -22,10 +22,10 @@ class SaveAllActivitiesInteractorImpl: SaveAllActivitiesInteractor {
             try context.save()
             onSuccess(activities)
         } catch {
-            //            Código de error a devolver
-            //            onError(nil)
+            if let myError = onError {
+                myError()
+            }
         }
-        
     }
     
     func execute(activities: Activities, context: NSManagedObjectContext, onSuccess: @escaping activitiesClosure) {

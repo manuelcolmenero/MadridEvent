@@ -9,7 +9,9 @@
 import Foundation
 
 // URLs
-public let mapAPI = "https://maps.googleapis.com/maps/api/staticmap?%25&size=320x220&scale=2&markers="
+public let mapAPI      = "https://maps.googleapis.com/maps/api/staticmap?%25&size=320x220&scale=2&markers="
+public let activityAPI = "https://madrid-shops.com/json_new/getActivities.php"
+public let shopAPI     = "https://madrid-shops.com/json_new/getShops.php"
 
 // Language
 public let spanishLanguage = "ES"
