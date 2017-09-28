@@ -1,8 +1,8 @@
 //
 //  CoreDataStack.swift
-//  CoreDataHelloWorld
+//  MadridEvent
 //
-//  Created by Manuel Colmenero Navarro on 18/9/17.
+//  Created by Manuel Colmenero Navarro on 24/9/17.
 //  Copyright © 2017 Manuel Colmenero Navarro. All rights reserved.
 //
 
@@ -15,7 +15,6 @@ public class CoreDataStack {
     public func createContainer(dbName: String) -> NSPersistentContainer {
         let container = NSPersistentContainer(name: dbName)
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            print("💾 \( storeDescription.description )" )
             if let error = error as NSError? {
                 fatalError("💩 Unresolved error \(error), \(error.userInfo)")
             }
