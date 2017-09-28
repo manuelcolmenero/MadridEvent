@@ -33,6 +33,30 @@ func translateDescription(shopCD: ShopCD) -> String {
     return textReturn
 }
 
+// MARK: - Translate Activity
+func translateOpeningHours(activityCD: ActivityCD) -> String {
+    var textReturn: String = ""
+    
+    if deviceLanguage() == spanishLanguage {
+        textReturn = activityCD.openingHoursEs ?? ""
+    } else if deviceLanguage() == englishLanguage {
+        textReturn = activityCD.openingHoursEn ?? ""
+    }
+    return textReturn
+}
+
+
+func translateDescription(activityCD: ActivityCD) -> String {
+    var textReturn: String = ""
+    
+    if deviceLanguage() == spanishLanguage {
+        textReturn = activityCD.descriptionEs ?? ""
+    } else if deviceLanguage() == englishLanguage {
+        textReturn = activityCD.descriptionEn ?? ""
+    }
+    return textReturn
+}
+
 // MARK: - Translate texts
 func displayText(text: String) -> String {
     var textReturn: String = ""

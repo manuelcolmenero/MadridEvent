@@ -17,6 +17,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var shopButton: UIButton!
     @IBOutlet weak var activityView: UIActivityIndicatorView!
     @IBOutlet weak var loadingLabelView: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,28 +39,62 @@ class MainViewController: UIViewController {
         
         self.loadingLabelView.text = displayText(text: LoadingText)
         
+        
         let downloadShopsInteractor : DownloadAllShopsInteractor = DownloadAllShopsInteractorNSURLSessionImpl()
+        let downloadActivitiesInteractor : DownloadAllActivitiesInteractor = DownloadAllActivitiesInteractorNSURLSessionImpl()
+        
         
         downloadShopsInteractor.execute (onSuccess: { (shops: Shops) in
             
             // Cuando se termina de obtener de internet las shops se guardan en local
-            let cacheInteractor = SaveAllShopsInteractorImpl()
-            cacheInteractor.execute(shops: shops, context: self.context!, onSuccess: { (shops: Shops) in
+            let shopsCacheInteractor = SaveAllShopsInteractorImpl()
+            shopsCacheInteractor.execute(shops: shops, context: self.context!, onSuccess: { (shops: Shops) in
                 
-                SetExecutedOnceInteractorImp().execute()
-                
+                downloadActivitiesInteractor.execute (onSuccess: { (activities: Activities) in
+                    
+                    // Cuando se termina de obtener de internet las activities se guardan en local
+                    let activityCacheInteractor = SaveAllActivitiesInteractorImpl()
+                    activityCacheInteractor.execute(activities: activities, context: self.context!, onSuccess: { (activities: Activities) in
+                        
+                        SetExecutedOnceInteractorImp().execute()
+                        
+                        self.activityView.stopAnimating()
+                        self.activityView.isHidden     = true
+                        self.loadingLabelView.isHidden = true
+                        self.activityButton.isEnabled  = true
+                        self.shopButton.isEnabled      = true
+                    }, onError: {
+                        print(displayError(textError: CacheError))
+                        self.activityView.stopAnimating()
+                        self.activityView.isHidden     = true
+                        self.loadingLabelView.isHidden = true
+                        self.activityButton.isEnabled  = true
+                        self.shopButton.isEnabled      = true
+                    })
+                }, onError: {
+                    userPopUp(title: "Error", message: displayError(textError: ConnectionError), vc: self, onCompletion: {
+                        self.activityView.stopAnimating()
+                        self.activityView.isHidden     = true
+                        self.loadingLabelView.isHidden = true
+                        self.activityButton.isEnabled  = true
+                        self.shopButton.isEnabled      = true
+                    })
+                })
+            }, onError: {
+                print(displayError(textError: CacheError))
                 self.activityView.stopAnimating()
                 self.activityView.isHidden     = true
                 self.loadingLabelView.isHidden = true
                 self.activityButton.isEnabled  = true
                 self.shopButton.isEnabled      = true
-                
-            }, onError: {
-                print(displayError(textError: CacheError))
             })
         }, onError: {
             userPopUp(title: "Error", message: displayError(textError: ConnectionError), vc: self, onCompletion: {
-                // una vez pulsa el boton de OK
+                self.activityView.stopAnimating()
+                self.activityView.isHidden     = true
+                self.loadingLabelView.isHidden = true
+                self.activityButton.isEnabled  = true
+                self.shopButton.isEnabled      = true
             })
         })
     }
@@ -68,6 +103,9 @@ class MainViewController: UIViewController {
         if segue.identifier == "ShowShopsSegue" {
             let vc     = segue.destination as! ShopsListViewController
             vc.context = self.context
-        } 
+        } else if segue.identifier == "ShowActivitiesSegue" {
+            let vc     = segue.destination as! ActivitiesListViewController
+            vc.context = self.context
+        }
     }
 }

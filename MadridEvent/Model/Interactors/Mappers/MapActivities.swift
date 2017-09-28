@@ -13,8 +13,8 @@ func mapActivityCDIntoActivity (activityCD : ActivityCD) -> Activity {
     // Mapping ActivityCD into Activity
     let activity                = Activity(name: activityCD.name ?? "Empty")
     activity.address            = activityCD.address ?? ""
-    activity.image              = activityCD.image ?? ""
-    activity.logo               = activityCD.logo ?? ""
+    activity.image              = activityCD.imageURL ?? ""
+    activity.logo               = activityCD.logoURL ?? ""
     
     activity.latitude           = activityCD.latitude
     activity.longitude          = activityCD.longitude
@@ -33,8 +33,8 @@ func mapActivityIntoActivityCD (context: NSManagedObjectContext, activity: Activ
     let activityCD              = ActivityCD(context: context)
     activityCD.name             = activity.name
     activityCD.address          = activity.address
-    activityCD.image            = activity.image
-    activityCD.logo             = activity.logo
+    activityCD.imageURL         = activity.image
+    activityCD.logoURL          = activity.logo
     
     activityCD.latitude         = activity.latitude ?? 0
     activityCD.longitude        = activity.longitude ?? 0
@@ -44,5 +44,13 @@ func mapActivityIntoActivityCD (context: NSManagedObjectContext, activity: Activ
     activityCD.descriptionEn    = activity.descriptionEn
     activityCD.descriptionEs    = activity.descriptionEs
     
+    let serialQueue = DispatchQueue(label: "DownloadImageQueue")
+    serialQueue.sync {
+        activityCD.logoData  = downloadAndCacheImage(urlString: activity.logo)
+        activityCD.imageData = downloadAndCacheImage(urlString: activity.image)
+        
+        let urlString = mapAPI + "\(activity.latitude!),\(activity.longitude!)"
+        activityCD.locationData = downloadAndCacheImage(urlString: urlString)
+    }
     return activityCD
 }
