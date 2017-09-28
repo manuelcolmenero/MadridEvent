@@ -33,6 +33,23 @@ func translateDescription(shopCD: ShopCD) -> String {
     return textReturn
 }
 
+// MARK: - Translate texts
+func displayText(text: String) -> String {
+    var textReturn: String = ""
+    
+    switch text {
+    case LoadingText:
+        if deviceLanguage() == spanishLanguage {
+            textReturn =  "Cargando..."
+        } else if deviceLanguage() == englishLanguage {
+            textReturn =  "Loading..."
+        }
+    default:
+        textReturn = "Texto no controlado: " + text
+    }
+    return textReturn
+}
+
 // MARK: - Translate Errors
 func displayError(textError: String) -> String {
     var textReturn: String = ""
@@ -67,5 +84,6 @@ func displayError(textError: String) -> String {
     }
     return textReturn
 }
+
 
 

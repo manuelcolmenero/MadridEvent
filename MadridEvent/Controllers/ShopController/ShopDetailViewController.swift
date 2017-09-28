@@ -16,11 +16,13 @@ class ShopDetailViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var shopDetailDescription: UITextView!
     
+    @IBOutlet weak var addressView: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.title = self.shopCD.name
         self.shopDetailDescription.text = translateDescription(shopCD: shopCD)
+        self.addressView.text = self.shopCD.address
         
         if let mapData = shopCD.locationData {
             self.imageView.image = UIImage(data: mapData)

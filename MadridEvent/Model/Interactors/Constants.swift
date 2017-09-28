@@ -15,6 +15,8 @@ public let mapAPI = "https://maps.googleapis.com/maps/api/staticmap?%25&size=320
 public let spanishLanguage = "ES"
 public let englishLanguage = "EN"
 
+public let LoadingText    = "LOADING"
+
 // Errors
 public let CacheError      = "ERRORCACHE"
 public let ConnectionError = "ERRORCONNECTION"
