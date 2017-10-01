@@ -11,7 +11,7 @@ import Foundation
 class DownloadAllShopsInteractorNSURLSessionImpl: DownloadAllShopsInteractor {
     func execute(onSuccess: @escaping shopsClosure, onError: errorClosure) {
         
-        let urlString =  "https://madrid-shops.com/json_new/getShops.php"
+        let urlString =  URLSHOPAPI
         
         let session = URLSession.shared
         if let url = URL(string: urlString) {

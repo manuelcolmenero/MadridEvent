@@ -11,7 +11,7 @@ import Foundation
 class DownloadAllActivitiesInteractorNSURLSessionImpl: DownloadAllActivitiesInteractor {
     func execute(onSuccess: @escaping activitiesClosure, onError: errorClosure) {
         
-        let urlString =  activityAPI
+        let urlString =  URLACTIVITYAPI
         
         let session = URLSession.shared
         if let url = URL(string: urlString) {

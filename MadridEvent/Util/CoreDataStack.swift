@@ -10,13 +10,12 @@ import Foundation
 import CoreData
 
 // MARK: - Core Data stack
-
 public class CoreDataStack {
     public func createContainer(dbName: String) -> NSPersistentContainer {
         let container = NSPersistentContainer(name: dbName)
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
-                fatalError("💩 Unresolved error \(error), \(error.userInfo)")
+                fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
         return container

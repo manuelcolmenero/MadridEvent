@@ -34,9 +34,9 @@ func activityFetchedResultsController(context: NSManagedObjectContext) -> NSFetc
     
     // Set the batch size to a suitable number.
     fetchRequest.fetchBatchSize = 20
-    
+
     // Edit the sort key as appropriate.
-    let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+    let sortDescriptor = NSSortDescriptor(key: ACTIVITYSORTDESC, ascending: true)
     
     fetchRequest.sortDescriptors = [sortDescriptor]
     
@@ -47,7 +47,7 @@ func activityFetchedResultsController(context: NSManagedObjectContext) -> NSFetc
         NSFetchedResultsController(fetchRequest: fetchRequest,
                                    managedObjectContext: context,
                                    sectionNameKeyPath: nil,
-                                   cacheName: "ShopCacheFile")
+                                   cacheName: ACTIVITYCACHEFILE)
     
     do {
         // Se ejecuta la consulta

@@ -46,12 +46,12 @@ func mapShopIntoShopCD (context: NSManagedObjectContext, shop: Shop) -> ShopCD {
     shopCD.descriptionEn    = shop.descriptionEn
     shopCD.descriptionEs    = shop.descriptionEs
     
-    let serialQueue = DispatchQueue(label: "DownloadImageQueue")
+    let serialQueue = DispatchQueue(label: DOWNLOADIMAGEQUEUE)
     serialQueue.sync {
         shopCD.logoData  = downloadAndCacheImage(urlString: shop.logo)
         shopCD.imageData = downloadAndCacheImage(urlString: shop.image)
         
-        let urlString = mapAPI + "\(shop.latitude!),\(shop.longitude!)"
+        let urlString = URLMAPAPI + "\(shop.latitude!),\(shop.longitude!)"
         shopCD.locationData = downloadAndCacheImage(urlString: urlString)
     }
     

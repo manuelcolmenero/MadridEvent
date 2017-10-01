@@ -31,14 +31,7 @@ class MainViewController: UIViewController {
     
     func initializeData() {
         
-        self.activityButton.isEnabled   = false
-        self.shopButton.isEnabled       = false
-        self.loadingLabelView.isHidden  = false
-        self.activityView.isHidden      = false
-        self.activityView.startAnimating()
-        
-        self.loadingLabelView.text = displayText(text: LoadingText)
-        
+        self.initInterfaceCache()
         
         let downloadShopsInteractor : DownloadAllShopsInteractor = DownloadAllShopsInteractorNSURLSessionImpl()
         let downloadActivitiesInteractor : DownloadAllActivitiesInteractor = DownloadAllActivitiesInteractorNSURLSessionImpl()
@@ -57,55 +50,59 @@ class MainViewController: UIViewController {
                     activityCacheInteractor.execute(activities: activities, context: self.context!, onSuccess: { (activities: Activities) in
                         
                         SetExecutedOnceInteractorImp().execute()
+                        self.finishInterfaceCache()
                         
-                        self.activityView.stopAnimating()
-                        self.activityView.isHidden     = true
-                        self.loadingLabelView.isHidden = true
-                        self.activityButton.isEnabled  = true
-                        self.shopButton.isEnabled      = true
                     }, onError: {
-                        print(displayError(textError: CacheError))
-                        self.activityView.stopAnimating()
-                        self.activityView.isHidden     = true
-                        self.loadingLabelView.isHidden = true
-                        self.activityButton.isEnabled  = true
-                        self.shopButton.isEnabled      = true
+                        print(displayError(textError: CACHEERROR))
+                        self.finishInterfaceCache()
                     })
                 }, onError: {
-                    userPopUp(title: "Error", message: displayError(textError: ConnectionError), vc: self, onCompletion: {
-                        self.activityView.stopAnimating()
-                        self.activityView.isHidden     = true
-                        self.loadingLabelView.isHidden = true
-                        self.activityButton.isEnabled  = true
-                        self.shopButton.isEnabled      = true
+                    userPopUp(title: "Error", message: displayError(textError: CONNECTIONERROR), vc: self, onCompletion: {
+                        self.finishInterfaceCache()
+                        
                     })
                 })
             }, onError: {
-                print(displayError(textError: CacheError))
-                self.activityView.stopAnimating()
-                self.activityView.isHidden     = true
-                self.loadingLabelView.isHidden = true
-                self.activityButton.isEnabled  = true
-                self.shopButton.isEnabled      = true
+                print(displayError(textError: CACHEERROR))
+                self.finishInterfaceCache()
+                
             })
         }, onError: {
-            userPopUp(title: "Error", message: displayError(textError: ConnectionError), vc: self, onCompletion: {
-                self.activityView.stopAnimating()
-                self.activityView.isHidden     = true
-                self.loadingLabelView.isHidden = true
-                self.activityButton.isEnabled  = true
-                self.shopButton.isEnabled      = true
+            userPopUp(title: "Error", message: displayError(textError: CONNECTIONERROR), vc: self, onCompletion: {
+                self.finishInterfaceCache()
+                
             })
         })
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowShopsSegue" {
+        if segue.identifier == SHOPLISTSEGUE {
             let vc     = segue.destination as! ShopsListViewController
             vc.context = self.context
-        } else if segue.identifier == "ShowActivitiesSegue" {
+        } else if segue.identifier == ACTIVITYLISTSEGUE {
             let vc     = segue.destination as! ActivitiesListViewController
             vc.context = self.context
         }
+    }
+    
+    // Función de inicializar la pantalla Main para empezar la descarga de datos a cache
+    func initInterfaceCache() {
+        
+        self.activityButton.isEnabled   = false
+        self.shopButton.isEnabled       = false
+        self.loadingLabelView.isHidden  = false
+        self.activityView.isHidden      = false
+        self.activityView.startAnimating()
+        
+        self.loadingLabelView.text = displayText(text: LOADTEXT)
+    }
+    
+    // Función de inicializar la pantalla Main para terminar la descarga de datos a cache
+    func finishInterfaceCache() {
+        self.activityView.stopAnimating()
+        self.activityView.isHidden     = true
+        self.loadingLabelView.isHidden = true
+        self.activityButton.isEnabled  = true
+        self.shopButton.isEnabled      = true
     }
 }

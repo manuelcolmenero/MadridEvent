@@ -9,13 +9,16 @@
 import Foundation
 import MapKit
 
+// Clase de Anotaciones para Shop
 class AnnotationShop: NSObject, MKAnnotation {
     
+    // Creación de variables
     var coordinate: CLLocationCoordinate2D
     var title: String?
     var subtitle: String?
     var shopCD: ShopCD
     
+    // Proceso Init
     init(coordinate: CLLocationCoordinate2D, title: String?, subtitle: String?, shopCD: ShopCD) {
         self.coordinate   = coordinate
         self.title        = title
@@ -29,13 +32,16 @@ class AnnotationShop: NSObject, MKAnnotation {
     }
 }
 
+// Clase de Anotaciones para Activity
 class AnnotationActivity: NSObject, MKAnnotation {
     
+    // Creación de variables
     var coordinate: CLLocationCoordinate2D
     var title: String?
     var subtitle: String?
     var activityCD: ActivityCD
     
+    // Proceso Init
     init(coordinate: CLLocationCoordinate2D, title: String?, subtitle: String?, activityCD: ActivityCD) {
         self.coordinate   = coordinate
         self.title        = title

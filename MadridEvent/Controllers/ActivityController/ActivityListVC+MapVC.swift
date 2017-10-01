@@ -57,13 +57,13 @@ extension ActivitiesListViewController: CLLocationManagerDelegate, MKMapViewDele
             
             pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: pinID)
             
-            // Se activa que muestre el pin cuando se hace click sobre ella
+            // Se activa que muestre el pin cuando se pulsa
             pinView?.canShowCallout = true
             
-            // Se crea una anotación con la tienda seleccionada
+            // Se crea una anotación con el registro seleccionada
             let activityCD = (annotation as! AnnotationActivity).getActivityCD()
             
-            // Se informa la imagen de la tienda
+            // Se informa la imagen
             let image: UIImage
             if let logo = activityCD.logoData {
                 image = UIImage(data: logo)!

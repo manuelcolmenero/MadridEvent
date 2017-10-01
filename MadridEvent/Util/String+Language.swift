@@ -13,9 +13,9 @@ import Foundation
 func translateOpeningHours(shopCD: ShopCD) -> String {
     var textReturn: String = ""
     
-    if deviceLanguage() == spanishLanguage {
+    if deviceLanguage() == SPANISHLANGUAGE {
         textReturn = shopCD.openingHoursEs ?? ""
-    } else if deviceLanguage() == englishLanguage {
+    } else if deviceLanguage() == ENGLISHLANGUAGE {
         textReturn = shopCD.openingHoursEn ?? ""
     }
     return textReturn
@@ -25,9 +25,9 @@ func translateOpeningHours(shopCD: ShopCD) -> String {
 func translateDescription(shopCD: ShopCD) -> String {
     var textReturn: String = ""
     
-    if deviceLanguage() == spanishLanguage {
+    if deviceLanguage() == SPANISHLANGUAGE {
         textReturn = shopCD.descriptionEs ?? ""
-    } else if deviceLanguage() == englishLanguage {
+    } else if deviceLanguage() == ENGLISHLANGUAGE {
         textReturn = shopCD.descriptionEn ?? ""
     }
     return textReturn
@@ -37,9 +37,9 @@ func translateDescription(shopCD: ShopCD) -> String {
 func translateOpeningHours(activityCD: ActivityCD) -> String {
     var textReturn: String = ""
     
-    if deviceLanguage() == spanishLanguage {
+    if deviceLanguage() == SPANISHLANGUAGE {
         textReturn = activityCD.openingHoursEs ?? ""
-    } else if deviceLanguage() == englishLanguage {
+    } else if deviceLanguage() == ENGLISHLANGUAGE {
         textReturn = activityCD.openingHoursEn ?? ""
     }
     return textReturn
@@ -49,9 +49,9 @@ func translateOpeningHours(activityCD: ActivityCD) -> String {
 func translateDescription(activityCD: ActivityCD) -> String {
     var textReturn: String = ""
     
-    if deviceLanguage() == spanishLanguage {
+    if deviceLanguage() == SPANISHLANGUAGE {
         textReturn = activityCD.descriptionEs ?? ""
-    } else if deviceLanguage() == englishLanguage {
+    } else if deviceLanguage() == ENGLISHLANGUAGE {
         textReturn = activityCD.descriptionEn ?? ""
     }
     return textReturn
@@ -62,11 +62,11 @@ func displayText(text: String) -> String {
     var textReturn: String = ""
     
     switch text {
-    case LoadingText:
-        if deviceLanguage() == spanishLanguage {
-            textReturn =  "Cargando..."
-        } else if deviceLanguage() == englishLanguage {
-            textReturn =  "Loading..."
+    case LOADTEXT:
+        if deviceLanguage() == SPANISHLANGUAGE {
+            textReturn =  SPLOADINGTEXT
+        } else if deviceLanguage() == ENGLISHLANGUAGE {
+            textReturn =  ENLOADINGTEXT
         }
     default:
         textReturn = "Texto no controlado: " + text
@@ -79,28 +79,28 @@ func displayError(textError: String) -> String {
     var textReturn: String = ""
     
     switch textError {
-    case CacheError:
-        if deviceLanguage() == spanishLanguage {
+    case CACHEERROR:
+        if deviceLanguage() == SPANISHLANGUAGE {
             textReturn =  "💩 Error al realizar cache"
-        } else if deviceLanguage() == englishLanguage {
+        } else if deviceLanguage() == ENGLISHLANGUAGE {
             textReturn =  "💩 Failed to perform cache"
         }
-    case ConnectionError:
-        if deviceLanguage() == spanishLanguage {
+    case CONNECTIONERROR:
+        if deviceLanguage() == SPANISHLANGUAGE {
             textReturn =  "💩 Error al conectarse a Internet"
-        } else if deviceLanguage() == englishLanguage {
+        } else if deviceLanguage() == ENGLISHLANGUAGE {
             textReturn =  "💩 Failed to connect to the Internet"
         }
-    case CacheImageError:
-        if deviceLanguage() == spanishLanguage {
+    case CACHEIMAGEERROR:
+        if deviceLanguage() == SPANISHLANGUAGE {
             textReturn =  "💩 Error al descargar la imagen"
-        } else if deviceLanguage() == englishLanguage {
+        } else if deviceLanguage() == ENGLISHLANGUAGE {
             textReturn =  "💩 Error downloading image"
         }
-    case JSONParseError:
-        if deviceLanguage() == spanishLanguage {
+    case JSONPARSEERROR:
+        if deviceLanguage() == SPANISHLANGUAGE {
             textReturn =  "💩 Error al transformar datos"
-        } else if deviceLanguage() == englishLanguage {
+        } else if deviceLanguage() == ENGLISHLANGUAGE {
             textReturn =  "💩 Error transforming data"
         }
     default:
