@@ -44,12 +44,12 @@ func mapActivityIntoActivityCD (context: NSManagedObjectContext, activity: Activ
     activityCD.descriptionEn    = activity.descriptionEn
     activityCD.descriptionEs    = activity.descriptionEs
     
-    let serialQueue = DispatchQueue(label: "DownloadImageQueue")
+    let serialQueue = DispatchQueue(label: DOWNLOADIMAGEQUEUE)
     serialQueue.sync {
         activityCD.logoData  = downloadAndCacheImage(urlString: activity.logo)
         activityCD.imageData = downloadAndCacheImage(urlString: activity.image)
         
-        let urlString = mapAPI + "\(activity.latitude!),\(activity.longitude!)"
+        let urlString = URLMAPAPI + "\(activity.latitude!),\(activity.longitude!)"
         activityCD.locationData = downloadAndCacheImage(urlString: urlString)
     }
     return activityCD

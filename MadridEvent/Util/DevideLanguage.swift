@@ -8,21 +8,23 @@
 
 import Foundation
 
+// Enum para controlar los idiomas posibles de la aplicación
 public enum DeviceLanguageTypes {
     case En
     case Es
 }
 
+// Función que obtiene el idioma del dispositivo y devuelve el idioma en una constante
 func deviceLanguage() -> String {
     
     let language = Locale.current.languageCode
     
     switch language {
     case "en"?:
-        return englishLanguage
+        return ENGLISHLANGUAGE
     case "es"?:
-        return spanishLanguage
+        return SPANISHLANGUAGE
     default:
-        return spanishLanguage
+        return SPANISHLANGUAGE
     }
 }

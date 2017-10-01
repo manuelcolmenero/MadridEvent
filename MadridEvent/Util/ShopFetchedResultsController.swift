@@ -28,7 +28,7 @@ func shopFetchedResultsController(context: NSManagedObjectContext) -> NSFetchedR
     fetchRequest.fetchBatchSize = 20
     
     // Edit the sort key as appropriate.
-    let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+    let sortDescriptor = NSSortDescriptor(key: SHOPSORTDESC, ascending: true)
     
     fetchRequest.sortDescriptors = [sortDescriptor]
     
@@ -39,7 +39,7 @@ func shopFetchedResultsController(context: NSManagedObjectContext) -> NSFetchedR
         NSFetchedResultsController(fetchRequest: fetchRequest,
                                    managedObjectContext: context,
                                    sectionNameKeyPath: nil,
-                                   cacheName: "ShopCacheFile")
+                                   cacheName: SHOPCACHEFILE)
     
     do {
         // Se ejecuta la consulta

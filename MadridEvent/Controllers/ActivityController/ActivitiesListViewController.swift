@@ -42,11 +42,11 @@ class ActivitiesListViewController: UIViewController {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let activity : ActivityCD = activityFetchedResultsController(context: context).object(at: indexPath)
-        self.performSegue(withIdentifier: "ShowActivityDetailSegue", sender: activity)
+        self.performSegue(withIdentifier: ACTIVITYDETAILSEGUE, sender: activity)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowActivityDetailSegue" {
+        if segue.identifier == ACTIVITYDETAILSEGUE {
             let vc = segue.destination as! ActivityDetailViewController
             let activityCD : ActivityCD = sender as! ActivityCD
             

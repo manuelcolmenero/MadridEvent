@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         // Crea una BBDD y lee una definición de objeto llamado igual
-        self.context = cds.createContainer(dbName: "MadridEvent").viewContext
+        self.context = cds.createContainer(dbName: APLICATIONNAME).viewContext
         
         self.cds.saveContext(context: self.context!)
         

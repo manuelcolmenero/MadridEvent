@@ -42,11 +42,11 @@ class ShopsListViewController: UIViewController {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let shop : ShopCD = shopFetchedResultsController(context: context).object(at: indexPath)
-        self.performSegue(withIdentifier: "ShowShopDetailSegue", sender: shop)
+        self.performSegue(withIdentifier: SHOPDETAILSEGUE, sender: shop)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowShopDetailSegue" {
+        if segue.identifier == SHOPDETAILSEGUE {
             let vc = segue.destination as! ShopDetailViewController
             let shopCD : ShopCD = sender as! ShopCD
             

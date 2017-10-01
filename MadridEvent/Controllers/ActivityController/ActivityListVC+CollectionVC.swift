@@ -22,9 +22,9 @@ extension ActivitiesListViewController: UICollectionViewDelegate, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell: ActivityCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActivityCell", for: indexPath) as! ActivityCollectionViewCell
+        let cell: ActivityCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: ACTIVITYCELL, for: indexPath) as! ActivityCollectionViewCell
+
         
-        //let shop: Shop = (self.shops?.get(index: indexPath.row))!
         let activityCD : ActivityCD = activityFetchedResultsController(context: context).object(at: indexPath)
         
         cell.refresh(activityCD: activityCD)
