@@ -93,9 +93,9 @@ func displayError(textError: String) -> String {
         }
     case CACHEIMAGEERROR:
         if deviceLanguage() == SPANISHLANGUAGE {
-            textReturn =  "💩 Error al descargar la imagen"
+            textReturn =  "💩 Error al descargar la imagen "
         } else if deviceLanguage() == ENGLISHLANGUAGE {
-            textReturn =  "💩 Error downloading image"
+            textReturn =  "💩 Error downloading image "
         }
     case JSONPARSEERROR:
         if deviceLanguage() == SPANISHLANGUAGE {
